@@ -39,10 +39,15 @@
 
         button.addEventListener( 'click', () => {
 
+
+
             let message_body = {
                 body: body.value,
                 user_id: user_id.value,
             }
+
+
+
 
             fetch( '/messages', {
                 method: "POST",
@@ -54,12 +59,15 @@
             })
                 .then( res => res.json() )
                 .then( body => {
+                    // body.value = ''
                     // console.log( body.body )
                     // let div = document.createElement( 'div' )
                     // div.innerHTML = `User: ${body.body.user_id ?? 'Anonymous'} | Message: ${body.body.body} | ${body.body.created_at}`
                     //
                     // messages.appendChild( div )
                 })
+
+            body.value = ''
         })
 
         setTimeout( () => {
